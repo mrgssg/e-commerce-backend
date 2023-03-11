@@ -31,10 +31,10 @@ router.get('/:id', (req, res) => {
   })
   .then(categoryData => {
     if (!categoryData) {
-      res.status(404).json({message: 'No product foundwith this id'});
+      res.status(404).json({message: 'No product found with this id'});
       return;
     }
-    res.json(catagoryData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
@@ -83,7 +83,7 @@ router.delete('/:id', (req, res) => {
   })
   .then(catagoryData => {
     if (!catagoryData){
-    res.status(400).json({message: "No category found with that id."});
+    res.status(404).json({message: "No category found with that id."});
     return;
   }
   res.json(catagoryData);
